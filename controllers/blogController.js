@@ -11,6 +11,7 @@ blogs.get("/", async ( req, res ) => {
     }
 });
 
+
 blogs.get('/:id', async (req, res) => {
     const { id } = req.params;
     const blogs = await getBlogs(id);

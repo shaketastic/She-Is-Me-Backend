@@ -21,7 +21,7 @@ const getBlogs = async (id) => {
 
 const createBlog = async (blog) => {
   try {
-      const newBlog = await db.one("INSERT INTO blogs (title, name, age, content, created_at, is_anonymous) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *", [blog.title, blog.name, blog.age, blog.content, blog.created_at, blog.is_anonymous]);
+      const newBlog = await db.one("INSERT INTO blogs (title, name, age, content, created_at, is_anonymous) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *", [blog.title, blog.name, blog.age, blog.content, blog.created_at, blog.is_anonymous]);
       return newBlog;
   } catch (error) {
       return error;
